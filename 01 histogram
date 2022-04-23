@@ -1,0 +1,44 @@
+{
+  "description" : "histogram",
+  "data": { "name" : "dataset" } ,
+  
+  "layer":
+    [
+      {
+       "mark": 
+        { 
+          "type": "bar" ,
+          "color": "#E6E6E6",
+          "tooltip": true 
+        },
+       "encoding":
+        {
+        "x": 
+          { 
+            "field" : "03 units",
+            "bin" : { "maxbins" : 50},
+            "title": "Valor (Bins)"
+          },
+        
+        "y": 
+          { 
+            "aggregate" : "count",
+            "title" : "Count of records" 
+          }
+        }
+      } ,
+      { 
+        "mark": "rule" , 
+        "encoding": 
+        {
+          "x": 
+            { 
+              "aggregate": "mean",
+              "field": "03 units"
+            } ,
+          "color": { "value" : "red" },
+          "size": { "value" : 3 }
+        } 
+      }
+    ]
+  }
